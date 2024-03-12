@@ -138,6 +138,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: all 0.5s ease-in;
+    transform: translateX(100%);
 
     /* hide-dispaly */
     /* allows no transitions at all */
@@ -149,13 +151,11 @@
     pointer-events: none;
     /* 3- Hide it from screen readers */
     visibility: hidden;
-
-    transition: all 0.5s ease-in;
-    transform: translateX(100%);
   }
 
-  .nav-open,
-  .main-nav {
+
+  /* if both class needed for a specific action, don't use comma to separate them */
+  .nav-open .main-nav {
     opacity: 1;
     pointer-events: auto;
     visibility: visible;
@@ -178,5 +178,42 @@
   .main-nav-link:link,
   .main-nav-link:visited {
     font-size: 3rem;
+  }
+}
+
+/*******************/ 
+/*BELOW 704 PX (SMALLER TABLETS)*/
+/*******************/
+
+@media(max-width:44em){
+  .grid--3-cols, .grid--4-cols{
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .diets{
+    grid-column: 1 / -1;
+    justify-self: center;
+  }
+
+  .heading-secondary{
+    margin-bottom: 4.8rem;
+  }
+
+  .pricing-plan{
+    width: 100%;
+  }
+
+  .grid--footer{
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .logo-col, .address-col{
+    grid-column: span 3;
+  }
+
+  .nav-col{
+    grid-row: 1;
+    grid-column: span 2;
+    margin-bottom: 3.2rem;
   }
 }

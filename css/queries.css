@@ -121,14 +121,24 @@
     margin-top: 1.2rem;
   }
 
+  /* ------------------------ */
   /*MOBILE NAVIGATION*/
+  /* ------------------------ */
 
   .btn-mobile-nav {
     display: block;
+    z-index: 999999;
   }
 
+  /* .btn-mobile-nav:focus{
+    outline: none;
+    box-shadow: none;
+  } */
+
   .main-nav {
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     position: absolute;
     top: 0;
     left: 0;
@@ -152,7 +162,6 @@
     /* 3- Hide it from screen readers */
     visibility: hidden;
   }
-
 
   /* if both class needed for a specific action, don't use comma to separate them */
   .nav-open .main-nav {
@@ -181,39 +190,166 @@
   }
 }
 
-/*******************/ 
+/*******************/
 /*BELOW 704 PX (SMALLER TABLETS)*/
 /*******************/
 
-@media(max-width:44em){
-  .grid--3-cols, .grid--4-cols{
+@media (max-width: 44em) {
+  .grid--3-cols,
+  .grid--4-cols {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .diets{
+  .diets {
     grid-column: 1 / -1;
     justify-self: center;
   }
 
-  .heading-secondary{
+  .heading-secondary {
     margin-bottom: 4.8rem;
   }
 
-  .pricing-plan{
+  .pricing-plan {
     width: 100%;
   }
 
-  .grid--footer{
+  .grid--footer {
     grid-template-columns: repeat(6, 1fr);
   }
 
-  .logo-col, .address-col{
+  .logo-col,
+  .address-col {
     grid-column: span 3;
   }
 
-  .nav-col{
+  .nav-col {
     grid-row: 1;
     grid-column: span 2;
     margin-bottom: 3.2rem;
+  }
+}
+
+/*******************/
+/*BELOW 544 PX (PHONES)*/
+/*******************/
+
+@media (max-width: 44em) {
+  .grid {
+    row-gap: 4.8rem;
+  }
+
+  .grid--2-cols,
+  .grid--3-cols,
+  .grid--4-cols {
+    grid-template-columns: 1fr;
+  }
+
+  .btn,
+  .btn:link,
+  .btn:visited {
+    padding: 2.4rem 1.6rem;
+  }
+
+  .section-hero {
+    padding: 2.4rem 0 6.4rem 0;
+  }
+
+  .hero {
+    padding: 0 3.2rem;
+  }
+
+  .hero-img {
+    width: 80%;
+  }
+
+  .logos img {
+    height: 1.2rem;
+  }
+
+  .step-img-box:nth-child(2) {
+    grid-row: 1;
+  }
+
+  .step-img-box:nth-child(6) {
+    grid-row: 5;
+  }
+
+  .step-img-box {
+    transform: translateY(2.4rem);
+  }
+
+  .testimonials {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.2rem;
+  }
+
+  .cta {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-img-box {
+    height: 32rem;
+    grid-row: 1;
+  }
+
+  .cta-text-box {
+    padding: 3.2rem;
+  }
+}
+
+/*******************/
+/*FIXING SAFARI FLEXBOX GAP*/
+/*******************/
+
+.no-flexbox-gap .main-nav-list li:not(:last-child) {
+  margin-right: 4.8rem;
+}
+
+.no-flexbox-gap .list-item:not(:last-child) {
+  margin-bottom: 1.6rem;
+}
+
+.no-flexbox-gap .list-icon:not(:last-child) {
+  margin-right: 1.6rem;
+}
+
+.no-flexbox-gap .delivered-faces {
+  margin-right: 1.6rem;
+}
+
+.no-flexbox-gap .meal-attribute:not(:last-child) {
+  margin-bottom: 2rem;
+}
+
+.no-flexbox-gap .meal-icon {
+  margin-right: 1.6rem;
+}
+
+.no-flexbox-gap .footer-row div:not(:last-child) {
+  margin-right: 6.4rem;
+}
+
+.no-flexbox-gap .social-links li:not(:last-child) {
+  margin-right: 2.4rem;
+}
+
+.no-flexbox-gap .footer-nav li:not(:last-child) {
+  margin-bottom: 2.4rem;
+}
+
+@media (max-width: 75em) {
+  .no-flexbox-gap .main-nav-list li:not(:last-child) {
+    margin-right: 3.2rem;
+  }
+}
+
+@media (max-width: 59em) {
+  .no-flexbox-gap .main-nav-list li:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 4.8rem;
   }
 }
